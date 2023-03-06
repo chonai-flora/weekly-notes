@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Layout from "../components/layout"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -18,8 +18,8 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header>
-          <h2 itemProp="headline">{post.frontmatter.title}</h2>
-          <p>{post.frontmatter.date}</p>
+          <h3 itemProp="headline">{post.frontmatter.title}</h3>
+          <smaller>{post.frontmatter.date}</smaller>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
