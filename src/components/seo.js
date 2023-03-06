@@ -28,7 +28,8 @@ const Seo = ({ title, slug, children }) => {
 
   const siteUrl = site.siteMetadata?.siteUrl
   const metaUrl = `${siteUrl}${slug}`
-  const metaTitle = title === "All notes" ? site.siteMetadata?.title : `${title} | ${site.siteMetadata?.title}`
+  const ogpSrc = `${siteUrl}/${slug ? `images${slug.slice(0, -1)}.png` : `ogp.png`}`
+  const metaTitle = slug ? `${title} | ${site.siteMetadata?.title}` : site.siteMetadata?.title
 
   return (
     <>
@@ -38,11 +39,11 @@ const Seo = ({ title, slug, children }) => {
       <meta name="description" content={site.siteMetadata.description} />
       <meta property="og:title" content={metaTitle} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${siteUrl}/ogp.png`} />
+      <meta property="og:image" content={ogpSrc} />
       <meta property="og:url" content={metaUrl} />
       <meta property="og:description" content={site.siteMetadata.description} />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content={`${siteUrl}/ogp.png`} />
+      <meta name="twitter:image" content={ogpSrc} />
       {children}
     </>
   )
