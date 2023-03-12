@@ -28,7 +28,7 @@ const Seo = ({ title, slug, children }) => {
 
   const siteUrl = site.siteMetadata?.siteUrl
   const metaUrl = `${siteUrl}${slug}`
-  const ogpSrc = `${siteUrl}/${slug ? `images${slug.slice(0, -1)}.png` : `ogp.png`}`
+  const ogpSrc = `${siteUrl}/${slug ? `images${slug.slice(0, -1)}` : `ogp`}.png`
   const metaTitle = slug ? `${title} | ${site.siteMetadata?.title}` : site.siteMetadata?.title
 
   return (
