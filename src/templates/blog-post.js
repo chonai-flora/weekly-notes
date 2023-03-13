@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import { pathPrefix } from "../../gatsby-config"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -41,14 +40,14 @@ const BlogPostTemplate = ({
         >
           <li>
             {previous && (
-              <Link to={`${pathPrefix}${previous.fields.slug}`} rel="prev">
+              <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`${pathPrefix}${next.fields.slug}`} rel="next">
+              <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}

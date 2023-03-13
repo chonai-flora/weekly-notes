@@ -31,6 +31,7 @@ const Seo = ({ title, slug, children }) => {
   const ogpSrc = `${siteUrl}/${slug ? `images${slug.slice(0, -1)}` : `ogp`}.png`
   const metaTitle = slug ? `${title} | ${site.siteMetadata?.title}` : site.siteMetadata?.title
 
+  console.log(ogpSrc)
   return (
     <>
       <head prefix="og: https://ogp.me/ns#" />

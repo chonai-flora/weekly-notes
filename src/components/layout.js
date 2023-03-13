@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import * as React from "react"
 
-import { pathPrefix } from "../../gatsby-config"
-
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -12,7 +10,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <>
         <h2 className="main-heading">
-          <Link to={pathPrefix}>
+          <Link to="/">
             {title}
             <span style={{
               fontSize: "smaller",
@@ -29,7 +27,7 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <Link className="header-link-home" to={pathPrefix}>{title}</Link>
+      <Link to="/" className="header-link-home" >{title}</Link>
     )
   }
 
