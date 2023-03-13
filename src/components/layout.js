@@ -21,7 +21,7 @@ const Layout = ({ location, title, children }) => {
         <br />
         <p>
           週記です。
-          <a href="archives/">こちら</a>も。
+          <a href="https://chonai-flora.github.io/archives/">こちら</a>も。
         </p>
       </>
     )
